@@ -7,7 +7,7 @@ class Song
   end
 
   def save
-    self.class.all << self
+    self.all << self
   end
 
   def self.create
@@ -42,7 +42,7 @@ class Song
   end
 
   def self.alphabetical
-    @@all.sort{ |song_a, song_b| song_a.name <=> song_b.name }
+    @@all.sort_by{ |song| song.name }
   end
 
   def self.new_from_filename(file_name)
